@@ -22,7 +22,9 @@
     "js": "always",
     "json": "always"
     }
-    ]
+    ],
+    "no-use-before-define": ["error", {"functions": false, "classes": false}]
+
     },
     "ignorePatterns": [
     "dist/",
