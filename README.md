@@ -2,7 +2,7 @@
 
 # Awesome Books
 
->Second HTML/CSS project about portfolio with mobile first approach.
+>First module Two Project  using plain javascript and objects.
 
 
 ## Built With
