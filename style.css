@@ -1,5 +1,31 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+
+.books-container,
+.create-book {
+  margin: 25px;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid black;
+  width: 33.3%;
+  padding-bottom: 15px;
+}
+
+.book-card p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.create-book {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
 }
