@@ -22,9 +22,9 @@ class BookModel {
   }
 
   removeBook() {
-    const bookCards = document.querySelectorAll('.book-card');
+    const bookCards = document.querySelectorAll('.remove-btn');
     bookCards.forEach((bookCard, cardIndex) => {
-      bookCard.children[2].addEventListener('click', () => {
+      bookCard.addEventListener('click', () => {
         this.books = this.books.filter((book, i) => i !== cardIndex);
         this.saveLocalStorage(this.books);
         this.refreshContent();
@@ -46,12 +46,11 @@ class BookModel {
   }
 
   createSingleBookCard(book) {
-    this.bookContainer.innerHTML += `<div class="book-card">
-      <p>${book.title}</p>
-      <p>${book.author}</p>
-      <button id="">remove</button>
-      <hr/>
-      </div>`;
+    this.bookContainer.innerHTML += `
+    <tr>
+      <td>${book.title} by ${book.author}</td>
+      <td><button class="remove-btn">remove</button></td>
+    </tr>`;
   }
 
   refreshContent() {
@@ -67,7 +66,7 @@ class BookModel {
 }
 
 const createBookForm = document.querySelector('.create-book');
-const booksContainer = document.querySelector('.books-container');
+const booksContainer = document.querySelector('.book-content');
 
 const book1 = new BookModel(booksContainer);
 book1.refreshContent();

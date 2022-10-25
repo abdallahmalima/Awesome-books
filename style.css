@@ -1,3 +1,38 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --primary-color: #000;
+  --secondary-color: #eee;
+  --weight-700: 700;
+}
+
+.books-container hr{
+  border-color: var(--primary-color);
+}
+
+.book-content {
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  
+}
+
+.book-content tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-color);
+  font-weight: var(--weight-700);
+}
+
+.book-content tbody:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
+@media all and  (min-width: 768px) {
+  .book-content {
+    max-width: 500px;
+  }
+}
+
+
