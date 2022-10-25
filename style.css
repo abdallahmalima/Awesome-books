@@ -66,12 +66,10 @@ button {
   padding: 0;
 }
 
-
 @media all and  (min-width: 768px) {
   .book-content,
   .divider,
-  .form-container
-   {
+  .form-container {
     max-width: 500px;
   }
 }
