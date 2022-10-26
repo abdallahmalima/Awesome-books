@@ -8,6 +8,12 @@
   --weight-700: 700;
 }
 
+.books-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .books-container hr {
   border-color: var(--primary-color);
 }
@@ -33,6 +39,8 @@ button {
   box-shadow: 3px 3px 0 0 var(--primary-color);
   margin-right: 10px;
   margin-bottom: 5px;
+  padding: 10px;
+  width: 100px;
 }
 
 .divider {
@@ -59,11 +67,146 @@ button {
   flex-direction: column;
   align-items: flex-end;
   gap: 15px;
+  width: 80%;
+  margin-top: 10%;
 }
 
 .create-book input {
   margin: 0;
-  padding: 0;
+  width: 100%;
+  padding: 10px;
+  border: 3px solid var(--primary-color);
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 72px;
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.wrapper nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+}
+
+.wrapper nav h3 {
+  margin-left: 9px;
+}
+
+.wrapper nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.wrapper nav ul li {
+  padding: 0 9px;
+}
+
+.wrapper nav ul li:nth-child(n+2) {
+  border-left: 1px solid var(--primary-color);
+}
+
+.wrapper nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.wrapper nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: all 0.5s;
+}
+
+.wrapper nav ul li a:hover::after {
+  width: 100%;
+}
+
+.wrapper .date {
+  text-align: end;
+  margin: 0;
+  padding-right: 9px;
+  margin-top: 3px;
+}
+
+/* ==============================*\
+           Content
+*\============================== */
+
+#content {
+  margin-top: 100px;
+  width: 100%;
+  height: calc(100vh - 168px);
+  display: flex;
+  justify-content: center;
+}
+
+#content .content-container {
+  animation: showElement 1s;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#content .content-container h2 {
+  text-align: center;
+}
+
+@keyframes showElement {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* ==============================*\
+           Copyright
+*\============================== */
+
+footer {
+  height: 30px;
+}
+
+.copyright-content {
+  border: 1px solid var(--primary-color);
+}
+
+.copyright-content p {
+  padding-left: 9px;
+  font-weight: var(--weight-700);
+  font-style: italic;
+}
+
+/* ==============================*\
+           Contact
+*\============================== */
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media all and  (min-width: 768px) {

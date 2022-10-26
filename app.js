@@ -23,6 +23,7 @@ class BookModel {
 
   removeBook() {
     const bookCards = document.querySelectorAll('.remove-btn');
+    console.log(bookCards);
     bookCards.forEach((bookCard, cardIndex) => {
       bookCard.addEventListener('click', () => {
         this.books = this.books.filter((book, i) => i !== cardIndex);
@@ -65,13 +66,71 @@ class BookModel {
   }
 }
 
-const createBookForm = document.querySelector('.create-book');
-const booksContainer = document.querySelector('.book-content');
-
-const book1 = new BookModel(booksContainer);
+const options = {
+  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit',
+};
+const dateContainer = document.querySelector('.date');
+dateContainer.textContent = new Date().toLocaleString('en-US', options);
+setInterval(() => {
+  dateContainer.textContent = new Date().toLocaleString('en-US', options);
+}, 1000);
+// const booksContainer = document.querySelector('.book-content');
+const contentContainer = document.createElement('div');
+contentContainer.classList.add('content-container');
+const contentTitle = document.createElement('h2');
+contentTitle.textContent = 'All Awesome Books';
+contentContainer.append(contentTitle);
+const booksContainer = document.createElement('div');
+booksContainer.classList.add('books-container');
+const table = document.createElement('table');
+table.classList.add('book-content');
+booksContainer.append(table);
+const lists = document.querySelectorAll('.link-btn');
+const contentWrapper = document.querySelector('#content .wrapper');
+contentContainer.append(booksContainer);
+contentWrapper.append(contentContainer);
+const book1 = new BookModel(table);
 book1.refreshContent();
 
-createBookForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  book1.addBook(createBookForm);
+lists.forEach((list, index) => {
+  list.addEventListener('click', () => {
+    if (index === 0) {
+      contentWrapper.innerHTML = contentContainer.outerHTML;
+      const table = contentWrapper.firstChild.childNodes[1].firstChild;
+      new BookModel(table).refreshContent();
+    } else if (index === 1) {
+      contentWrapper.innerHTML = `
+      <div class="content-container">
+      <div class="form-container">
+      <h2>Add a new book</h2>
+      <form class="create-book" action="">
+        <input class="input" name="title" type="text" placeholder="Title">
+        <input class="input" name="author" type="text" placeholder="Author">
+        <button id="add-btn" type="submit">Add</button>
+      </form>
+    </div>
+    </div>
+      `;
+
+      const createBookForm = document.querySelector('.create-book');
+      createBookForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        book1.addBook(createBookForm);
+      });
+    } else {
+      contentWrapper.innerHTML = `
+      <div class="content-container">
+      <h2>Contact Information</h2>
+        <div class="contact-container">
+          <p>Do you have any questions or you just want to say hello?, You can reach out to us</p>
+
+          <ul>
+            <li>Our email is email@email.com</li>
+            <li>Our phone is : +124125475</li>
+            <li>Our address is : Streethome 214, 14237 city, Country</li>
+          </ul>
+    </div>
+      `;
+    }
+  });
 });
