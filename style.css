@@ -33,6 +33,8 @@ button {
   box-shadow: 3px 3px 0 0 var(--primary-color);
   margin-right: 10px;
   margin-bottom: 5px;
+  padding: 10px;
+  width: 100px;
 }
 
 .divider {
@@ -59,11 +61,16 @@ button {
   flex-direction: column;
   align-items: flex-end;
   gap: 15px;
+  width: 80%;
+  margin-top: 10%;
 }
 
 .create-book input {
   margin: 0;
   padding: 0;
+  width: 100%;
+  padding: 10px;
+  border: 3px solid var(--primary-color);
 }
 
 header {
@@ -84,6 +91,11 @@ header {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid var(--primary-color);
+}
+
+.wrapper nav h3 {
+  margin-left: 9px;
 }
 
 .wrapper nav ul {
@@ -121,6 +133,71 @@ header {
 
 .wrapper nav ul li a:hover::after {
   width: 100%;
+}
+
+.wrapper .date {
+  text-align: end;
+  margin: 0;
+  padding-right: 9px ;
+  margin-top: 3px;
+}
+
+/*==============================*\
+           Content
+*\==============================*/
+
+#content {
+  margin-top: 72px;
+  width: 100%;
+  height: calc(100vh - 72px - 48px);
+  display: flex;
+  justify-content: center;
+}
+
+#content .content-container {
+  animation: showElement 1s;
+}
+
+#content .content-container h2 {
+  text-align: center;
+}
+
+@keyframes showElement {
+ from {
+  transform: translateY(-100%);
+ }
+
+ to {
+  transform: translateY(0%);
+ }
+  
+}
+
+/*==============================*\
+           Copyright
+*\==============================*/
+
+footer {
+  height: 30px;
+}
+.copyright-content {
+  border: 1px solid var(--primary-color);
+}
+
+.copyright-content p {
+  padding-left: 9px;
+  font-weight: var(--weight-700);
+  font-style: italic;
+}
+
+/*==============================*\
+           Contact
+*\==============================*/
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media all and  (min-width: 768px) {
