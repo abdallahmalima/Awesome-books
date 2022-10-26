@@ -66,11 +66,13 @@ class BookModel {
   }
 }
 
-let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit' };
+const options = {
+  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit',
+};
 const dateContainer = document.querySelector('.date');
-dateContainer.textContent = new Date().toLocaleString("en-US", options);
+dateContainer.textContent = new Date().toLocaleString('en-US', options);
 setInterval(() => {
-  dateContainer.textContent = new Date().toLocaleString("en-US", options);
+  dateContainer.textContent = new Date().toLocaleString('en-US', options);
 }, 1000);
 // const booksContainer = document.querySelector('.book-content');
 const contentContainer = document.createElement('div');
@@ -90,13 +92,12 @@ contentWrapper.append(contentContainer);
 const book1 = new BookModel(table);
 book1.refreshContent();
 
-
-
 lists.forEach((list, index) => {
   list.addEventListener('click', () => {
     if (index === 0) {
       contentWrapper.innerHTML = contentContainer.outerHTML;
-      book1.refreshContent();
+      const table = contentWrapper.firstChild.childNodes[1].firstChild;
+      new BookModel(table).refreshContent();
     } else if (index === 1) {
       contentWrapper.innerHTML = `
       <div class="content-container">
@@ -131,6 +132,5 @@ lists.forEach((list, index) => {
     </div>
       `;
     }
-  })
-})
-
+  });
+});

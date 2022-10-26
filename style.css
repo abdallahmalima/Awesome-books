@@ -73,7 +73,6 @@ button {
 
 .create-book input {
   margin: 0;
-  padding: 0;
   width: 100%;
   padding: 10px;
   border: 3px solid var(--primary-color);
@@ -109,13 +108,12 @@ header {
   display: flex;
 }
 
-.wrapper nav ul li{
+.wrapper nav ul li {
   padding: 0 9px;
 }
 
 .wrapper nav ul li:nth-child(n+2) {
   border-left: 1px solid var(--primary-color);
-
 }
 
 .wrapper nav ul li a {
@@ -129,7 +127,7 @@ header {
 .wrapper nav ul li a::after {
   content: "";
   position: absolute;
-  left: 0; 
+  left: 0;
   bottom: 0;
   width: 0%;
   height: 3px;
@@ -144,13 +142,13 @@ header {
 .wrapper .date {
   text-align: end;
   margin: 0;
-  padding-right: 9px ;
+  padding-right: 9px;
   margin-top: 3px;
 }
 
-/*==============================*\
+/* ==============================*\
            Content
-*\==============================*/
+*\============================== */
 
 #content {
   margin-top: 100px;
@@ -172,25 +170,25 @@ header {
 }
 
 @keyframes showElement {
- from {
-  opacity: 0;
-  transform: translateY(-100%);
- }
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
 
- to {
-  transform: translateY(0%);
-  opacity: 1;
- }
-  
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
-/*==============================*\
+/* ==============================*\
            Copyright
-*\==============================*/
+*\============================== */
 
 footer {
   height: 30px;
 }
+
 .copyright-content {
   border: 1px solid var(--primary-color);
 }
@@ -201,9 +199,9 @@ footer {
   font-style: italic;
 }
 
-/*==============================*\
+/* ==============================*\
            Contact
-*\==============================*/
+*\============================== */
 
 .contact-container {
   display: flex;
