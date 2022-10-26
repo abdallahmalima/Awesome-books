@@ -66,6 +66,63 @@ button {
   padding: 0;
 }
 
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 72px;
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.wrapper nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.wrapper nav ul li{
+  padding: 0 9px;
+}
+
+.wrapper nav ul li:nth-child(n+2) {
+  border-left: 1px solid var(--primary-color);
+
+}
+
+.wrapper nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.wrapper nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0; 
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: all 0.5s;
+}
+
+.wrapper nav ul li a:hover::after {
+  width: 100%;
+}
+
 @media all and  (min-width: 768px) {
   .book-content,
   .divider,
