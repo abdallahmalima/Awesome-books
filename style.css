@@ -8,6 +8,12 @@
   --weight-700: 700;
 }
 
+.books-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .books-container hr {
   border-color: var(--primary-color);
 }
@@ -147,15 +153,18 @@ header {
 *\==============================*/
 
 #content {
-  margin-top: 72px;
+  margin-top: 100px;
   width: 100%;
-  height: calc(100vh - 72px - 48px);
+  height: calc(100vh - 168px);
   display: flex;
   justify-content: center;
 }
 
 #content .content-container {
   animation: showElement 1s;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #content .content-container h2 {
@@ -164,11 +173,13 @@ header {
 
 @keyframes showElement {
  from {
+  opacity: 0;
   transform: translateY(-100%);
  }
 
  to {
   transform: translateY(0%);
+  opacity: 1;
  }
   
 }
